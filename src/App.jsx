@@ -11,6 +11,8 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import Services from './Components/Content/Services'
 import ClientWorks from './Components/Content/ClientWorks'
+import Testimonials from './Components/Content/Testimonials'  // Add this
+import Industries from './Components/Content/Industries'      // Add this
 
 function App() {
   const [loading, setLoading] = useState(false)
@@ -22,7 +24,6 @@ function App() {
       setLoading(false)
     }, 1500)
   }, [])
-
 
   return (
     <>
@@ -41,19 +42,19 @@ function App() {
         </div>
 
         :
-
         <>
           <Navbar />
           <Home />
           <About />
-<Services />
-<ClientWorks />
+          <Services />
+          <ClientWorks />
+          <Testimonials />     {/* Add Testimonials here */}
+          <Industries />       {/* Add Industries here */}
           <Contact />
           <Footer />
           <Analytics />
           <SpeedInsights />
         </>}
-
     </>
   )
 }

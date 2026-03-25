@@ -90,7 +90,7 @@ function Contact() {
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
       </div>
 
-      <div className="lg:px-56 px-10 relative z-10">
+      <div className="lg:px-40 px-10 relative z-10">
         
         {/* Section Header */}
         <div className="text-center mb-16" data-aos="fade-up">

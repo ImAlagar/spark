@@ -54,7 +54,7 @@ function Footer() {
                 <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
             </div>
 
-            <div className="lg:px-56 px-6 py-12 relative z-10">
+            <div className="lg:px-40 px-6 py-12 relative z-10">
                 
                 {/* Main Footer Content */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
