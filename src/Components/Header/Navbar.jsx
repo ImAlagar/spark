@@ -14,7 +14,7 @@ function Navbar() {
     setDarkMode(!darkMode);
   };
 
-  // Apply dark class
+  // Apply dark mode
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
@@ -23,96 +23,106 @@ function Navbar() {
     }
   }, [darkMode]);
 
-  // Close mobile menu when clicking outside or scrolling
+  // Close mobile menu on scroll
   useEffect(() => {
     const handleCloseMenu = () => {
       if (click) setClick(false);
     };
 
-    window.addEventListener('scroll', handleCloseMenu);
-    
-    return () => {
-      window.removeEventListener('scroll', handleCloseMenu);
-    };
+    window.addEventListener("scroll", handleCloseMenu);
+    return () => window.removeEventListener("scroll", handleCloseMenu);
   }, [click]);
 
   const navItems = ["Home", "About", "Services", "Client Works", "Contact"];
 
-  const content = (
-    <div className="lg:hidden fixed top-16 left-0 right-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-2xl transition-all duration-300 z-[9999] max-h-[calc(100vh-4rem)] overflow-y-auto">
-      <ul className="text-center text-xl py-8">
-        {navItems.map((item, index) => (
-          <Link 
-            key={index} 
-            to={item} 
-            spy={true} 
-            smooth={true}
-            onClick={() => setClick(false)}
-            className="block"
-          >
-            <li className="my-3 px-6 py-2 text-gray-700 dark:text-gray-200 hover:text-fuchsia-600 dark:hover:text-fuchsia-400 transition-colors duration-300 cursor-pointer">
-              {item}
-            </li>
-          </Link>
-        ))}
-
-        {/* Mobile Theme Toggle */}
-        <div className="flex justify-center mt-8 pt-4 border-t border-gray-200 dark:border-gray-700">
-          <button
-            onClick={toggleTheme}
-            className="p-3 rounded-full bg-gray-100 dark:bg-slate-800 hover:bg-fuchsia-100 dark:hover:bg-fuchsia-900/30 transition-all duration-300 hover:scale-110"
-          >
-            {darkMode ? <Sun size={20} className="text-yellow-500" /> : <Moon size={20} className="text-fuchsia-500" />}
-          </button>
-        </div>
-      </ul>
-    </div>
-  );
-
   return (
-    <nav className="sticky top-0 bg-white text-black dark:bg-slate-900 dark:text-white z-50">
-      <div className="h-10vh flex justify-between items-center lg:py-5 pl-20 pr-14 py-4 border-b border-gray-200 dark:border-slate-800 relative z-50 bg-white dark:bg-slate-900">
+    <nav className="sticky top-0 z-50 bg-white dark:bg-slate-900 text-black dark:text-white overflow-x-hidden">
+      
+      {/* Navbar Container */}
+      <div className="flex justify-between items-center py-4 px-4 md:px-10 lg:px-20 border-b border-gray-200 dark:border-slate-800">
+        
         {/* Logo */}
-        <div className="flex items-center flex-1">
-          <span className="text-3xl font-bold">
-            <Link to="Home" spy={true} smooth={true} className="cursor-pointer hover:text-fuchsia-600 transition-colors">
+        <div className="flex items-center">
+          <span className="text-2xl md:text-3xl font-bold">
+            <Link
+              to="Home"
+              spy={true}
+              smooth={true}
+              className="cursor-pointer hover:text-fuchsia-600 transition"
+            >
               Spark Creatives
             </Link>
           </span>
         </div>
 
         {/* Desktop Menu */}
-        <div className="lg:flex md:flex flex-1 items-center justify-end font-normal hidden">
-          <ul className="flex gap-8 text-[18px] items-center">
+        <div className="hidden lg:flex items-center gap-8 text-[18px]">
+          {navItems.map((item, index) => (
+            <Link key={index} to={item} spy={true} smooth={true}>
+              <span className="cursor-pointer hover:text-fuchsia-600 border-b-2 border-transparent hover:border-fuchsia-600 transition">
+                {item}
+              </span>
+            </Link>
+          ))}
+
+          {/* Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full bg-gray-100 dark:bg-slate-800 transition-all duration-500 hover:rotate-180 hover:scale-110"
+          >
+            {darkMode ? (
+              <Sun size={18} className="text-yellow-500" />
+            ) : (
+              <Moon size={18} className="text-fuchsia-500" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="lg:hidden text-2xl p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition"
+          onClick={handleClick}
+        >
+          {click ? <FaTimes /> : <CiMenuFries />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {click && (
+        <div className="lg:hidden fixed top-16 left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-2xl z-[9999] max-h-[calc(100vh-4rem)] overflow-y-auto overflow-x-hidden transition-all duration-300">
+          
+          <ul className="flex flex-col items-center text-xl py-8">
             {navItems.map((item, index) => (
-              <Link key={index} to={item} spy={true} smooth={true}>
-                <li className="hover:text-fuchsia-600 transition border-b-2 border-transparent hover:border-fuchsia-600 cursor-pointer">
+              <Link
+                key={index}
+                to={item}
+                spy={true}
+                smooth={true}
+                onClick={() => setClick(false)}
+                className="w-full text-center"
+              >
+                <li className="my-3 py-2 text-gray-700 dark:text-gray-200 hover:text-fuchsia-600 dark:hover:text-fuchsia-400 transition cursor-pointer">
                   {item}
                 </li>
               </Link>
             ))}
 
             {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full bg-gray-100 dark:bg-slate-800 transition-all duration-500 hover:rotate-180 hover:scale-110"
-            >
-              {darkMode ? <Sun size={18} className="text-yellow-500" /> : <Moon size={18} className="text-fuchsia-500" />}
-            </button>
+            <div className="flex justify-center mt-8 pt-4 border-t border-gray-200 dark:border-gray-700 w-full">
+              <button
+                onClick={toggleTheme}
+                className="p-3 rounded-full bg-gray-100 dark:bg-slate-800 hover:bg-fuchsia-100 dark:hover:bg-fuchsia-900/30 transition-all duration-300 hover:scale-110"
+              >
+                {darkMode ? (
+                  <Sun size={20} className="text-yellow-500" />
+                ) : (
+                  <Moon size={20} className="text-fuchsia-500" />
+                )}
+              </button>
+            </div>
           </ul>
         </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="block md:hidden transition text-2xl p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 z-50 relative"
-          onClick={handleClick}
-        >
-          {click ? <FaTimes /> : <CiMenuFries />}
-        </button>
-
-        {/* Mobile Menu */}
-        {click && content}
-      </div>
+      )}
     </nav>
   );
 }
