@@ -179,7 +179,7 @@ function Services() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="lg:px-40 px-10 relative z-10">
         
         {/* Header with Creative Design */}
         <div className="text-center mb-16" data-aos="fade-up">
@@ -301,41 +301,41 @@ function Services() {
           ))}
         </div>
 
-{/* Creative CTA Section */}
-<div data-aos="fade-up" className="mt-20 relative">
+        {/* Creative CTA Section */}
+        <div data-aos="fade-up" className="mt-20 relative">
 
-  {/* Soft background glow (reduced) */}
-  <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-500 to-purple-500 rounded-3xl blur-xl opacity-20"></div>
+          {/* Soft background glow (reduced) */}
+          <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-500 to-purple-500 rounded-3xl blur-xl opacity-20"></div>
 
-  <div className="relative bg-gradient-to-r from-fuchsia-600 to-purple-600 rounded-3xl p-8 md:p-12 text-white shadow-xl">
+          <div className="relative bg-gradient-to-r from-fuchsia-600 to-purple-600 rounded-3xl p-8 md:p-12 text-white shadow-xl">
 
-    {/* subtle light shapes */}
-    <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
-    <div className="absolute bottom-0 left-0 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+            {/* subtle light shapes */}
+            <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+            <div className="absolute bottom-0 left-0 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
 
-    <div className="relative z-10 text-center">
+            <div className="relative z-10 text-center">
 
-      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 border border-white/20 mb-6">
-        <Sparkles size={16} />
-        <span className="text-sm font-semibold">Limited Offer</span>
-      </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 border border-white/20 mb-6">
+                <Sparkles size={16} />
+                <span className="text-sm font-semibold">Limited Offer</span>
+              </div>
 
-      <h3 className="text-3xl md:text-4xl font-bold mb-3">
-        Ready to Elevate Your Brand?
-      </h3>
+              <h3 className="text-3xl md:text-4xl font-bold mb-3">
+                Ready to Elevate Your Brand?
+              </h3>
 
-      <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-        Let's work together to create amazing content that tells your story and grows your audience
-      </p>
+              <p className="text-white/90 mb-8 max-w-2xl mx-auto">
+                Let's work together to create amazing content that tells your story and grows your audience
+              </p>
 
-      <button className="group bg-white text-fuchsia-600 px-8 py-3 rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 inline-flex items-center gap-2">
-        Get a Free Quote
-        <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-      </button>
+              <button className="group bg-white text-fuchsia-600 px-8 py-3 rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 inline-flex items-center gap-2">
+                Get a Free Quote
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </button>
 
-    </div>
-  </div>
-</div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Modal */}

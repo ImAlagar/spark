@@ -190,28 +190,53 @@ function Contact() {
           <div data-aos="fade-left" className="space-y-6">
             
             {/* Contact Information Cards */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {contactInfo.map((info, index) => (
-                <div key={index} className="bg-white dark:bg-slate-800/50 backdrop-blur-sm rounded-xl p-4 border border-fuchsia-200 dark:border-fuchsia-800 hover:shadow-lg transition-all duration-300 group">
+                <div
+                  key={index}
+                  className="bg-white dark:bg-slate-800/50 backdrop-blur-sm 
+                            rounded-xl p-4 sm:p-5 
+                            border border-fuchsia-200 dark:border-fuchsia-800 
+                            hover:shadow-lg transition-all duration-300 group"
+                >
                   <div className="flex items-start gap-3">
-                    <div className="p-2 bg-fuchsia-100 dark:bg-fuchsia-900/50 rounded-lg group-hover:scale-110 transition-transform">
-                      <div className="text-fuchsia-500">{info.icon}</div>
+                    
+                    {/* Icon */}
+                    <div className="p-2 sm:p-3 
+                                    bg-fuchsia-100 dark:bg-fuchsia-900/50 
+                                    rounded-lg 
+                                    group-hover:scale-110 transition-transform">
+                      <div className="text-fuchsia-500 text-lg">
+                        {info.icon}
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">{info.title}</p>
+
+                    {/* Content */}
+                    <div className="min-w-0">
+                      <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">
+                        {info.title}
+                      </p>
+
                       {info.link ? (
-                        <a href={info.link} className="text-sm font-semibold hover:text-fuchsia-500 transition-colors break-words">
+                        <a
+                          href={info.link}
+                          className="text-sm sm:text-base font-semibold 
+                                    hover:text-fuchsia-500 transition-colors 
+                                    break-words whitespace-nowrap"
+                        >
                           {info.value}
                         </a>
                       ) : (
-                        <p className="text-sm font-semibold break-words">{info.value}</p>
+                        <p className="text-sm sm:text-base font-semibold break-words">
+                          {info.value}
+                        </p>
                       )}
                     </div>
+
                   </div>
                 </div>
               ))}
             </div>
-            
             {/* Google Map */}
             <div className="bg-white dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-fuchsia-200 dark:border-fuchsia-800">
               <div className="relative h-64 w-full">

@@ -1,7 +1,4 @@
 import React, { useEffect } from 'react'
-import { AiFillGithub } from 'react-icons/ai'
-import { FaXTwitter } from "react-icons/fa6";
-import { FaLinkedinIn, FaInstagram } from 'react-icons/fa'
 import { TypeAnimation } from 'react-type-animation'
 import img from '../../assets/right.png'
 import AOS from 'aos'
@@ -13,30 +10,8 @@ function Home() {
     AOS.init({ duration: 1000 })
   }, [])
 
-  const social = [
-    { link: '#', icon: <FaLinkedinIn /> },
-    { link: '#', icon: <AiFillGithub /> },
-    { link: '#', icon: <FaXTwitter /> },
-    { link: '#', icon: <FaInstagram /> }
-  ]
-
   return (
     <>
-      {/* 🔥 LEFT FLOATING SOCIAL */}
-      <div className="hidden lg:flex flex-col gap-4 fixed left-6 top-1/2 -translate-y-1/2 z-50">
-        {social.map((item, index) => (
-          <a
-            key={index}
-            href={item.link}
-            target="_blank"
-            rel="noreferrer"
-            className="text-fuchsia-600 hover:text-white bg-white dark:bg-slate-800 hover:bg-fuchsia-600 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
-          >
-            {item.icon}
-          </a>
-        ))}
-      </div>
-
       {/* 🔥 MAIN SECTION */}
       <div id='Home' className='bg-white text-black dark:bg-slate-900 dark:text-white lg:px-40 px-10 py-32 flex lg:flex-row flex-col-reverse items-center justify-between gap-10'>
 
@@ -99,22 +74,22 @@ function Home() {
 
         </div>
 
-    {/* RIGHT IMAGE */}
-    <div className='lg:w-1/2 flex justify-center relative z-0'>
+        {/* RIGHT IMAGE */}
+        <div className='lg:w-1/2 flex justify-center relative z-0'>
 
-      {/* 🔥 Glow Background */}
-      <div className="absolute z-0 w-[600px] h-[400px] bg-fuchsia-500 opacity-20 blur-3xl rounded-full"></div>
+          {/* 🔥 Glow Background */}
+          <div className="absolute z-0 w-[600px] h-[400px] bg-fuchsia-500 opacity-20 blur-3xl rounded-full"></div>
 
-      {/* 🔥 Image */}
-      <img
-        data-aos='zoom-in'
-        src={img}
-        alt="profile"
-        className='relative z-10 rounded-2xl border-2 border-fuchsia-500 p-1 shadow-2xl hover:scale-105 transition duration-500'
-        width={520}
-      />
+          {/* 🔥 Image */}
+          <img
+            data-aos='zoom-in'
+            src={img}
+            alt="profile"
+            className='relative z-10 rounded-2xl border-2 border-fuchsia-500 p-1 shadow-2xl hover:scale-105 transition duration-500'
+            width={520}
+          />
 
-    </div>
+        </div>
 
       </div>
     </>
