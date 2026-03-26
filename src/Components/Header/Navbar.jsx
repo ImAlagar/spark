@@ -33,7 +33,7 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleCloseMenu);
   }, [click]);
 
-  const navItems = ["Home", "About", "Services", "Client Works", "Contact"];
+  const navItems = ["Home", "About", "Services", "ClientWorks", "Contact"];
 
   return (
     <nav className="sticky top-0 z-50 bg-white dark:bg-slate-900 text-black dark:text-white overflow-x-hidden">
