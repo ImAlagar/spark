@@ -10,8 +10,7 @@ import {
   MdCheckCircle,
 } from 'react-icons/md'
 import { FaGithub, FaInstagram, FaLinkedin, FaTwitter} from 'react-icons/fa'
-import { Sparkles } from 'lucide-react'
-
+import { Sparkles, Quote } from 'lucide-react'
 
 function Contact() {
   const [formStatus, setFormStatus] = useState({
@@ -28,20 +27,20 @@ function Contact() {
     {
       icon: <MdMail className="w-6 h-6" />,
       title: "Email",
-      value: "hello@sparkcreatives.com",
-      link: "mailto:hello@sparkcreatives.com"
+      value: "hi@adbasecreatives.com",
+      link: "mailto:hi@adbasecreatives.com"
     },
     {
       icon: <MdPhone className="w-6 h-6" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "+91 9150118554",
+      link: "tel:+919150118554"
     },
     {
       icon: <MdLocationOn className="w-6 h-6" />,
       title: "Location",
-      value: "New York, USA",
-      link: "https://maps.google.com/?q=New+York"
+      value: "Chennai, India",
+      link: "https://maps.google.com/?q=Chennai"
     },
     {
       icon: <MdAccessTime className="w-6 h-6" />,
@@ -105,8 +104,41 @@ function Contact() {
           </h2>
           
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Have a project in mind? I'd love to hear about it. Let's create something amazing together!
+            Have a project in mind? Let's create something amazing together!
           </p>
+        </div>
+
+        {/* NEW: Quote Section before contact form */}
+        <div className="mb-16" data-aos="fade-up" data-aos-delay="100">
+          <div className="relative bg-gradient-to-br from-fuchsia-50 to-purple-50 dark:from-fuchsia-950/30 dark:to-purple-950/30 rounded-2xl p-8 md:p-10 border border-fuchsia-200 dark:border-fuchsia-800">
+            {/* Quote Icon */}
+            <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-fuchsia-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
+              <Quote className="w-6 h-6 text-white" />
+            </div>
+            
+            {/* Content */}
+            <div className="text-center">
+              <p className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 dark:text-white leading-relaxed">
+                "Good content is everywhere. But content that performs is rare."
+              </p>
+              <div className="my-6 h-px bg-gradient-to-r from-transparent via-fuchsia-300 to-transparent"></div>
+              <p className="text-lg md:text-xl text-gray-700 dark:text-gray-200">
+                We don't just create — we create with purpose, backed by strategy.
+              </p>
+              <p className="text-md text-gray-600 dark:text-gray-300 mt-3">
+                Because your brand deserves more than just posts.
+              </p>
+              <div className="mt-6">
+                <span className="inline-block px-6 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-500 text-white rounded-full text-sm font-semibold">
+                  That's AdBase Creatives.
+                </span>
+              </div>
+            </div>
+
+            {/* Decorative elements */}
+            <div className="absolute -bottom-3 -right-3 w-24 h-24 bg-fuchsia-500/10 rounded-full blur-2xl"></div>
+            <div className="absolute -top-3 -right-3 w-16 h-16 bg-purple-500/10 rounded-full blur-xl"></div>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -120,7 +152,7 @@ function Contact() {
               </h3>
               
               <form action="https://api.web3forms.com/submit" method="POST" onSubmit={handleSubmit} className="space-y-5">
-                <input type="hidden" name="access_key" value="a3acc553-464c-4fc0-ab60-2ba7b134788f" />
+                <input type="hidden" name="access_key" value="b917bcec-a209-4009-96fa-a81dc5b29e76" />
                 
                 <div>
                   <label className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Full Name</label>
@@ -222,7 +254,7 @@ function Contact() {
                           href={info.link}
                           className="text-sm sm:text-base font-semibold 
                                     hover:text-fuchsia-500 transition-colors 
-                                    break-words whitespace-nowrap"
+                                    break-words"
                         >
                           {info.value}
                         </a>
@@ -237,12 +269,13 @@ function Contact() {
                 </div>
               ))}
             </div>
+            
             {/* Google Map */}
             <div className="bg-white dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-fuchsia-200 dark:border-fuchsia-800">
               <div className="relative h-64 w-full">
                 <iframe
                   title="Google Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a316c6b6b6b%3A0x6b5b5b5b5b5b5b5b!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1647894567890!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15552.5123456789!2d80.2338!3d13.0827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e4a5e5c5c5c5c5c!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1647894567890!5m2!1sen!2sin"
                   className="w-full h-full"
                   style={{ border: 0 }}
                   allowFullScreen=""
@@ -254,7 +287,7 @@ function Contact() {
             
             {/* Social Media Links */}
             <div className="bg-white dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-fuchsia-200 dark:border-fuchsia-800">
-              <h4 className="text-lg font-semibold mb-4 text-center">Connect With Me</h4>
+              <h4 className="text-lg font-semibold mb-4 text-center">Connect With Us</h4>
               <div className="flex justify-center gap-4">
                 <a href="#" className="p-3 bg-gray-100 dark:bg-slate-700 rounded-full hover:bg-fuchsia-500 hover:text-white transition-all duration-300 group">
                   <FaInstagram className="w-5 h-5 text-fuchsia-600 group-hover:text-white" />
@@ -279,6 +312,7 @@ function Contact() {
           </div>
         </div>
       </div>
+
 
     </div>
   )

@@ -3,6 +3,7 @@ import { Link } from "react-scroll";
 import { FaTimes } from "react-icons/fa";
 import { CiMenuFries } from "react-icons/ci";
 import { Sun, Moon } from "lucide-react";
+import logo from "../../assets/logo.png"
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -33,30 +34,32 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleCloseMenu);
   }, [click]);
 
-  const navItems = ["Home", "About", "Services", "ClientWorks", "Contact"];
+  const navItems = ["Home", "About", "Services", "Brand", "Contact"];
 
   return (
     <nav className="sticky top-0 z-50 bg-white dark:bg-slate-900 text-black dark:text-white overflow-x-hidden">
       
       {/* Navbar Container */}
-      <div className="flex justify-between items-center py-4 px-4 md:px-10 lg:px-20 border-b border-gray-200 dark:border-slate-800">
+      <div className="flex justify-between items-center py-3 px-4 md:px-10 lg:px-20 border-b border-gray-200 dark:border-slate-800">
         
         {/* Logo */}
         <div className="flex items-center">
-          <span className="text-2xl md:text-3xl font-bold">
-            <Link
-              to="Home"
-              spy={true}
-              smooth={true}
-              className="cursor-pointer hover:text-fuchsia-600 transition"
-            >
-              Spark Creatives
-            </Link>
-          </span>
+          <Link
+            to="Home"
+            spy={true}
+            smooth={true}
+            className="cursor-pointer hover:opacity-80 transition-opacity flex items-center"
+          >
+            <img
+              src={logo}
+              alt="AdBase Creatives Logo"
+              className="h-12 md:h-14 lg:h-16 object-cover"
+            />
+          </Link>
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center gap-8 text-[18px]">
+        <div className="hidden xl:flex items-center gap-8 text-[18px]">
           {navItems.map((item, index) => (
             <Link key={index} to={item} spy={true} smooth={true}>
               <span className="cursor-pointer hover:text-fuchsia-600 border-b-2 border-transparent hover:border-fuchsia-600 transition">
@@ -80,7 +83,7 @@ function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-2xl p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition"
+          className="xl:hidden text-2xl p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition"
           onClick={handleClick}
         >
           {click ? <FaTimes /> : <CiMenuFries />}
@@ -89,7 +92,7 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {click && (
-        <div className="lg:hidden fixed top-16 left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-2xl z-[9999] max-h-[calc(100vh-4rem)] overflow-y-auto overflow-x-hidden transition-all duration-300">
+        <div className="xl:hidden fixed top-[73px] left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-2xl z-[9999] max-h-[calc(100vh-4rem)] overflow-y-auto overflow-x-hidden transition-all duration-300">
           
           <ul className="flex flex-col items-center text-xl py-8">
             {navItems.map((item, index) => (

@@ -4,15 +4,10 @@ import 'aos/dist/aos.css'
 import { 
   ArrowRight, 
   Sparkles, 
-  Palette, 
-  Camera, 
-  TrendingUp,
-  Award,
-  Users,
-  Clock
+  Target, 
+  Eye
 } from 'lucide-react'
-import { FaInstagram, FaBehance, FaDribbble } from 'react-icons/fa'
-import aboutImg from '../../assets/about-vector.png' // Add your vector image here
+import aboutImg from '../../assets/abo.png' // Add your vector image here
 
 function About() {
 
@@ -20,104 +15,99 @@ function About() {
     AOS.init({ duration: 1000 })
   }, [])
 
-  const achievements = [
-    { icon: <Award className="w-5 h-5" />, value: "15+", label: "Projects" },
-    { icon: <Users className="w-5 h-5" />, value: "10+", label: "Happy Clients" },
-    { icon: <Clock className="w-5 h-5" />, value: "2+", label: "Years Experience" }
-  ]
-
   return (
-    <div id='About' className='bg-white dark:bg-slate-900 text-black dark:text-white lg:py-10 py-4 overflow-hidden'>
-      <div className="lg:px-40 px-10">
+    <div id='About' className='bg-gradient-to-br from-white via-fuchsia-50/30 to-purple-50/30 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 text-black dark:text-white py-20 overflow-hidden'>
+      <div className="lg:px-40 px-6">
         
         {/* Section Heading */}
         <div className="text-center mb-16" data-aos="fade-up">
           <p className="text-fuchsia-500 uppercase tracking-wider text-sm font-semibold mb-2 flex items-center justify-center gap-2">
             <Sparkles className="w-4 h-4" />
-            Creative Storyteller
+            About AdBase Creatives
             <Sparkles className="w-4 h-4" />
           </p>
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-            About <span className="text-fuchsia-500">Me</span>
+            Your Brand, <span className="text-fuchsia-500">Powered by</span> Smart Marketing
           </h2>
-          <div className="w-20 h-1 bg-fuchsia-500 mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-fuchsia-500 to-purple-500 mx-auto rounded-full"></div>
         </div>
 
-        {/* Main Content - Left Right Layout */}
-        <div className="flex lg:flex-row flex-col gap-12 items-center justify-between">
-          
-          {/* Left Side - Vector Image */}
-          <div className="lg:w-5/12 flex justify-center" data-aos="fade-right">
-            <div className="relative">
-              {/* Glow Effect */}
-              <div className="absolute -inset-4 bg-fuchsia-500/20 rounded-full blur-2xl"></div>
-              {/* Image */}
+        {/* Hero Section with Image and Tagline */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+          {/* Left - Image */}
+          <div className="relative" data-aos="fade-right">
               <img 
                 src={aboutImg} 
-                alt="About Me" 
-                className="relative w-full max-w-md rounded-2xl hover:scale-105 transition-transform duration-500"
+                alt="AdBase Creatives" 
+                className="relative w-full max-w-md mx-auto rounded-2xl hover:scale-105 transition-transform duration-500"
               />
-            </div>
+
           </div>
 
-          {/* Right Side - Content */}
-          <div className="lg:w-7/12 space-y-6" data-aos="fade-left">
-            
-            {/* Introduction */}
-            <div>
-              <h3 className="text-2xl font-bold mb-3">
-                I'm a <span className="text-fuchsia-500">Creative Designer</span> & Content Creator
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                I specialize in creating compelling brand identities and engaging social media content 
-                that helps businesses stand out in the digital world. With a passion for visual storytelling, 
-                I transform ideas into captivating designs that resonate with audiences.
-              </p>
-            </div>
-
-            {/* What I Do - Small Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
-              <div className="bg-fuchsia-50 dark:bg-fuchsia-900/20 rounded-xl p-4 text-center hover:shadow-lg transition-all duration-300 group">
-                <div className="flex justify-center mb-2">
-                  <div className="p-2 bg-fuchsia-100 dark:bg-fuchsia-900/50 rounded-lg group-hover:scale-110 transition-transform">
-                    <Palette className="w-5 h-5 text-fuchsia-600" />
-                  </div>
-                </div>
-                <h4 className="font-semibold text-sm">Brand Identity</h4>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Visual storytelling</p>
-              </div>
-
-              <div className="bg-fuchsia-50 dark:bg-fuchsia-900/20 rounded-xl p-4 text-center hover:shadow-lg transition-all duration-300 group">
-                <div className="flex justify-center mb-2">
-                  <div className="p-2 bg-fuchsia-100 dark:bg-fuchsia-900/50 rounded-lg group-hover:scale-110 transition-transform">
-                    <Camera className="w-5 h-5 text-fuchsia-600" />
-                  </div>
-                </div>
-                <h4 className="font-semibold text-sm">Social Media</h4>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Engaging content</p>
-              </div>
-
-              <div className="bg-fuchsia-50 dark:bg-fuchsia-900/20 rounded-xl p-4 text-center hover:shadow-lg transition-all duration-300 group">
-                <div className="flex justify-center mb-2">
-                  <div className="p-2 bg-fuchsia-100 dark:bg-fuchsia-900/50 rounded-lg group-hover:scale-110 transition-transform">
-                    <TrendingUp className="w-5 h-5 text-fuchsia-600" />
-                  </div>
-                </div>
-                <h4 className="font-semibold text-sm">Content Strategy</h4>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Growth focused</p>
-              </div>
-            </div>
-
-
-            {/* Social Links */}
-            <div className="flex items-center justify-center gap-3 pt-4">
-              <a href="#" className="px-4 py-2 bg-fuchsia-500 text-white rounded-full text-sm font-semibold hover:bg-fuchsia-600 transition-all duration-300 flex items-center gap-2">
-                View Work <ArrowRight className="w-3 h-3" />
-              </a>
-            </div>
-
+          {/* Right - Main Description */}
+          <div className="space-y-4" data-aos="fade-left">
+            <h3 className="text-3xl font-bold leading-tight">
+              We Help Brands Grow Through{' '}
+              <span className="text-fuchsia-500">Strategy-Driven Content</span> & Digital Marketing
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+              We blend creativity with performance to deliver content that engages, converts, 
+              and scales your business. Your brand, powered by smart marketing.
+            </p>
           </div>
         </div>
+
+        {/* Vision & Mission Grid */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          {/* Vision Card */}
+          <div 
+            className="group relative bg-gradient-to-br from-fuchsia-50 to-purple-50 dark:from-fuchsia-900/10 dark:to-purple-900/10 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-500/0 to-purple-500/0 rounded-2xl group-hover:from-fuchsia-500/5 group-hover:to-purple-500/5 transition-all duration-500"></div>
+            <div className="relative">
+              <div className="w-14 h-14 bg-fuchsia-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Eye className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Our <span className="text-fuchsia-500">Vision</span></h3>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                To become a trusted growth partner for brands by delivering creative and performance-driven 
+                marketing solutions that create real impact.
+              </p>
+            </div>
+          </div>
+
+          {/* Mission Card */}
+          <div 
+            className="group relative bg-gradient-to-br from-purple-50 to-fuchsia-50 dark:from-purple-900/10 dark:to-fuchsia-900/10 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 to-fuchsia-500/0 rounded-2xl group-hover:from-purple-500/5 group-hover:to-fuchsia-500/5 transition-all duration-500"></div>
+            <div className="relative">
+              <div className="w-14 h-14 bg-purple-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Target className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Our <span className="text-purple-500">Mission</span></h3>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                To help businesses grow through strategic content, powerful storytelling, and result-oriented 
+                digital marketing that drives engagement, visibility, and conversions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA Button */}
+        <div className="text-center" data-aos="fade-up">
+          <a 
+            href="#" 
+            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-fuchsia-500 to-purple-500 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-fuchsia-500/25 transition-all duration-300 hover:scale-105"
+          >
+            Let's Grow Your Brand <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+
       </div>
     </div>
   )

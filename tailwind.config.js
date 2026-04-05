@@ -6,7 +6,27 @@ export default {
   ],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        slideLeft: {
+          "0%": { transform: "translateX(-100%)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        slideRight: {
+          "0%": { transform: "translateX(100%)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        fadeUp: {
+          "0%": { transform: "translateY(40px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+      },
+      animation: {
+        slideLeft: "slideLeft 1.2s ease-out forwards",
+        slideRight: "slideRight 1.2s ease-out forwards",
+        fadeUp: "fadeUp 1s ease-out forwards",
+      },
+    },
   },
   plugins: [],
 }
