@@ -199,20 +199,20 @@ function Testimonials() {
         {/* Stats Section */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16" data-aos="fade-up">
           <div className="text-center p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-fuchsia-100 dark:border-fuchsia-800">
-            <div className="text-3xl font-bold text-fuchsia-600">50+</div>
+            <div className="text-3xl font-bold text-fuchsia-600">10+</div>
             <div className="text-sm text-gray-600 dark:text-gray-400">Happy Clients</div>
           </div>
+                    <div className="text-center p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-fuchsia-100 dark:border-fuchsia-800">
+            <div className="text-3xl font-bold text-fuchsia-600">1+</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
+          </div>
           <div className="text-center p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-fuchsia-100 dark:border-fuchsia-800">
-            <div className="text-3xl font-bold text-fuchsia-600">200+</div>
+            <div className="text-3xl font-bold text-fuchsia-600">20+</div>
             <div className="text-sm text-gray-600 dark:text-gray-400">Projects Completed</div>
           </div>
           <div className="text-center p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-fuchsia-100 dark:border-fuchsia-800">
             <div className="text-3xl font-bold text-fuchsia-600">98%</div>
             <div className="text-sm text-gray-600 dark:text-gray-400">Client Satisfaction</div>
-          </div>
-          <div className="text-center p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-fuchsia-100 dark:border-fuchsia-800">
-            <div className="text-3xl font-bold text-fuchsia-600">4.9/5</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Average Rating</div>
           </div>
         </div>
       </div>

@@ -51,7 +51,7 @@ function Home() {
       <img
         src={left}
         alt="left hand"
-        className="absolute left-0 bottom-0 w-[180px] sm:w-[250px] md:w-[450px] lg:w-[450px] xl:w-[650px] opacity-80 pointer-events-none animate-float-in-out-left"
+        className="absolute left-0 bottom-10 w-[180px] sm:w-[250px] md:w-[450px] lg:w-[450px] xl:w-[650px] opacity-80 pointer-events-none animate-float-in-out-left"
         style={{ transformOrigin: 'bottom left' }}
       />
 
@@ -59,12 +59,12 @@ function Home() {
       <img
         src={right}
         alt="right hand"
-        className="absolute right-0 bottom-0 w-[180px] sm:w-[250px] md:w-[450px] lg:w-[450px] xl:w-[650px] opacity-80 pointer-events-none animate-float-in-out-right"
+        className="absolute right-0 bottom-10 w-[180px] sm:w-[250px] md:w-[450px] lg:w-[450px] xl:w-[650px] opacity-80 pointer-events-none animate-float-in-out-right"
         style={{ transformOrigin: 'bottom right' }}
       />
 
       {/* SOUND WAVE CENTER */}
-      <div className="absolute md:bottom-[300px] lg:bottom-[250px] xl:bottom-[300px] bottom-48 flex gap-2 z-10 items-end">
+      <div className="absolute md:bottom-[300px] lg:bottom-[250px] xl:bottom-[300px] bottom-60 flex gap-2 z-10 items-end">
         <div className="flex flex-col items-center gap-1">
           <span className="w-[6px] h-[30px] bg-purple-500 rounded-full animate-sound-wave-1 shadow-[0_0_8px_#a855f7]"></span>
         </div>
